@@ -1,0 +1,66 @@
+<!-- ============================================================ -->
+<!-- PAGE 1: LOGIN (index.html) -->
+<!-- ============================================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Barangay Health</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
+        body { background: #f0f4f9; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 1.5rem; }
+        .page-card { background: #ffffff; border-radius: 28px; box-shadow: 0 6px 20px rgba(0,0,0,0.04); padding: 2rem 2.2rem 2.5rem; border: 1px solid #e6edf4; max-width: 400px; width: 100%; }
+        .page-title { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; color: #4b6a7c; margin-bottom: 1.4rem; border-bottom: 2px solid #e1e8f0; padding-bottom: 0.5rem; display: flex; align-items: center; gap: 10px; }
+        .page-title i { color: #256f8a; font-size: 1.1rem; }
+        .system-name { font-size: 1.1rem; font-weight: 700; color: #0f3b4e; text-align: center; margin-bottom: 1.8rem; }
+        .system-name i { color: #256f8a; margin-right: 6px; }
+        .input-group { margin-bottom: 1.1rem; }
+        .input-group label { display: block; font-size: 0.8rem; font-weight: 500; color: #2c3f4f; margin-bottom: 0.25rem; }
+        .input-group input { width: 100%; padding: 0.7rem 1rem; border: 1.5px solid #d3dde8; border-radius: 30px; font-size: 0.9rem; background: #fafdff; }
+        .input-group input:focus { border-color: #256f8a; outline: none; background: #ffffff; }
+        .btn-login { background: #1a4f69; color: white; border: none; padding: 0.7rem; border-radius: 40px; font-weight: 600; font-size: 0.95rem; width: 100%; cursor: pointer; margin-top: 0.3rem; box-shadow: 0 4px 8px rgba(23,67,89,0.08); transition: background 0.2s; }
+        .btn-login:hover { background: #0f3b4e; }
+        .register-link { text-align: center; margin-top: 1.2rem; color: #256f8a; font-weight: 500; font-size: 0.9rem; cursor: pointer; }
+        .register-link:hover { text-decoration: underline; }
+        .role-selector { display: flex; gap: 1rem; justify-content: center; margin-bottom: 1.2rem; font-size: 0.85rem; }
+        .role-selector label { display: flex; align-items: center; gap: 5px; cursor: pointer; }
+        .role-selector input[type="radio"] { accent-color: #256f8a; width: 16px; height: 16px; }
+    </style>
+</head>
+<body>
+    <div class="page-card">
+        <div class="page-title"><i class="fas fa-sign-in-alt"></i> Login</div>
+        <div class="system-name"><i class="fas fa-hospital-user"></i> Barangay Health & Emergency</div>
+        
+        <div class="role-selector">
+            <label><input type="radio" name="role" value="resident" checked> Resident</label>
+            <label><input type="radio" name="role" value="admin"> Admin</label>
+        </div>
+        
+        <div class="input-group">
+            <label>Username</label>
+            <input type="text" placeholder="Enter username" value="juan.delacruz">
+        </div>
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" placeholder="••••••••" value="password123">
+        </div>
+        
+        <button class="btn-login" onclick="handleLogin()"><i class="fas fa-arrow-right-to-bracket" style="margin-right: 8px;"></i>Login</button>
+        <div class="register-link" onclick="alert('Registration page would open here')"><i class="fas fa-user-plus" style="margin-right: 6px;"></i>Register Here</div>
+    </div>
+
+    <script>
+        function handleLogin() {
+            const role = document.querySelector('input[name="role"]:checked').value;
+            if (role === 'resident') {
+                window.location.href = 'resident-dashboard.html';
+            } else {
+                window.location.href = 'admin-dashboard.html';
+            }
+        }
+    </script>
+</body>
+</html>

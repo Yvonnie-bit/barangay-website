@@ -1,0 +1,68 @@
+<!-- ============================================================ -->
+<!-- PAGE 3: ADMIN DASHBOARD (admin-dashboard.html) -->
+<!-- ============================================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
+        body { background: #f0f4f9; padding: 1.5rem; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .page-card { background: #ffffff; border-radius: 28px; box-shadow: 0 6px 20px rgba(0,0,0,0.04); padding: 1.8rem 2rem 2.2rem; border: 1px solid #e6edf4; max-width: 720px; width: 100%; }
+        .page-title { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; color: #4b6a7c; margin-bottom: 1.4rem; border-bottom: 2px solid #e1e8f0; padding-bottom: 0.5rem; display: flex; align-items: center; gap: 10px; }
+        .page-title i { color: #256f8a; font-size: 1.1rem; }
+        .nav-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; background: #f7fafd; padding: 0.5rem 1.2rem; border-radius: 60px; border: 1px solid #dce5ef; margin-bottom: 1.6rem; }
+        .nav-brand { font-weight: 700; color: #0f3b4e; font-size: 1rem; cursor: pointer; }
+        .nav-brand i { color: #256f8a; margin-right: 5px; }
+        .nav-links { display: flex; gap: 0.8rem 1.4rem; flex-wrap: wrap; font-size: 0.9rem; font-weight: 500; color: #2f4b5e; }
+        .nav-links span { cursor: pointer; padding: 0.2rem 0.6rem; border-radius: 20px; transition: background 0.2s; }
+        .nav-links span:hover { background: #e6edf4; }
+        .nav-links span i { margin-right: 4px; color: #3e6a7e; }
+        .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.8rem; margin: 0.8rem 0 1.2rem; }
+        .stat-card { background: #f3f8fe; border-radius: 30px; padding: 0.8rem 0.5rem; text-align: center; cursor: pointer; transition: transform 0.2s; }
+        .stat-card:hover { transform: scale(1.02); }
+        .stat-number { font-size: 1.8rem; font-weight: 700; color: #0a3140; line-height: 1.2; }
+        .stat-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.3px; color: #435f70; }
+        .incident-item { display: flex; justify-content: space-between; background: #f8fbfe; padding: 0.5rem 1rem; border-radius: 40px; margin-bottom: 0.4rem; border: 1px solid #e4ecf5; font-size: 0.9rem; cursor: pointer; transition: background 0.2s; }
+        .incident-item:hover { background: #edf4fa; }
+        .badge { font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.9rem; border-radius: 40px; }
+        .badge-pending { background: #fef3c7; color: #7a6217; }
+        .badge-resolved { background: #d1fae5; color: #0a5e3f; }
+        .badge-urgent { background: #fee2e2; color: #a11f1f; }
+        .section-label { font-weight: 600; color: #1f3d4f; margin: 0.2rem 0 0.5rem; }
+        .logout-btn { background: none; border: none; color: #a11f1f; cursor: pointer; font-weight: 500; padding: 0.2rem 0.6rem; border-radius: 20px; }
+        .logout-btn:hover { background: #fee2e2; }
+        .nav-right { display: flex; align-items: center; gap: 0.5rem; }
+    </style>
+</head>
+<body>
+    <div class="page-card">
+        <div class="page-title"><i class="fas fa-user-tie"></i> Admin Dashboard</div>
+        <div class="nav-bar">
+            <span class="nav-brand" onclick="window.location.href='admin-dashboard.html'"><i class="fas fa-shield-halved"></i>Admin</span>
+            <div class="nav-links">
+                <span onclick="window.location.href='admin-dashboard.html'"><i class="fas fa-chart-pie"></i>Dashboard</span>
+                <span onclick="window.location.href='medical-supplies.html'"><i class="fas fa-boxes"></i>Supplies</span>
+                <span onclick="alert('Incident Management page')"><i class="fas fa-notes-medical"></i>Incidents</span>
+                <span onclick="alert('Reports page')"><i class="fas fa-file-alt"></i>Reports</span>
+            </div>
+            <div class="nav-right">
+                <button class="logout-btn" onclick="window.location.href='index.html'"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+        </div>
+        <div class="stats-row">
+            <div class="stat-card" onclick="alert('Manage Residents page')"><div class="stat-number">69,550</div><div class="stat-label">Residents</div></div>
+            <div class="stat-card" onclick="window.location.href='emergency-request.html'"><div class="stat-number">15</div><div class="stat-label">Emerg. Today</div></div>
+            <div class="stat-card" onclick="alert('Incident Management')"><div class="stat-number">8</div><div class="stat-label">Active Incidents</div></div>
+            <div class="stat-card" onclick="window.location.href='medical-supplies.html'"><div class="stat-number">5</div><div class="stat-label">Low Stock</div></div>
+        </div>
+        <div class="section-label">RECENT INCIDENTS</div>
+        <div class="incident-item" onclick="alert('View Incident #001')"><span><i class="fas fa-exclamation-triangle" style="color:#b45309;"></i> Incident #001</span> <span class="badge badge-pending">Pending</span></div>
+        <div class="incident-item" onclick="alert('View Incident #002')"><span><i class="fas fa-check-circle" style="color:#1a7a3a;"></i> Incident #002</span> <span class="badge badge-resolved">Resolved</span></div>
+        <div class="incident-item" onclick="alert('View Incident #003')"><span><i class="fas fa-clock" style="color:#b45309;"></i> Incident #003</span> <span class="badge badge-urgent">Urgent</span></div>
+    </div>
+</body>
+</html>

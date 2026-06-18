@@ -1,0 +1,60 @@
+<!-- ============================================================ -->
+<!-- PAGE 2: RESIDENT DASHBOARD (resident-dashboard.html) -->
+<!-- ============================================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resident Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
+        body { background: #f0f4f9; padding: 1.5rem; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .page-card { background: #ffffff; border-radius: 28px; box-shadow: 0 6px 20px rgba(0,0,0,0.04); padding: 1.8rem 2rem 2.2rem; border: 1px solid #e6edf4; max-width: 650px; width: 100%; }
+        .page-title { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; color: #4b6a7c; margin-bottom: 1.4rem; border-bottom: 2px solid #e1e8f0; padding-bottom: 0.5rem; display: flex; align-items: center; gap: 10px; }
+        .page-title i { color: #256f8a; font-size: 1.1rem; }
+        .nav-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; background: #f7fafd; padding: 0.5rem 1.2rem; border-radius: 60px; border: 1px solid #dce5ef; margin-bottom: 1.6rem; }
+        .nav-brand { font-weight: 700; color: #0f3b4e; font-size: 1rem; cursor: pointer; }
+        .nav-brand i { color: #256f8a; margin-right: 5px; }
+        .nav-links { display: flex; gap: 0.8rem 1.4rem; flex-wrap: wrap; font-size: 0.9rem; font-weight: 500; color: #2f4b5e; }
+        .nav-links span { cursor: pointer; padding: 0.2rem 0.6rem; border-radius: 20px; transition: background 0.2s; }
+        .nav-links span:hover { background: #e6edf4; }
+        .nav-links span i { margin-right: 4px; color: #3e6a7e; }
+        .announcement-block { background: #f6faff; padding: 0.8rem 1.2rem; border-radius: 24px; border-left: 6px solid #2f7d9e; margin-bottom: 0.7rem; font-size: 0.95rem; }
+        .quick-action-group { display: flex; flex-wrap: wrap; gap: 0.8rem; margin: 0.5rem 0 0.2rem; }
+        .quick-btn { background: white; border: 1.5px solid #ced9e6; padding: 0.5rem 1.4rem; border-radius: 40px; font-weight: 500; font-size: 0.85rem; color: #1a4052; cursor: pointer; transition: all 0.2s; }
+        .quick-btn:hover { background: #f0f6fd; border-color: #256f8a; }
+        .quick-btn i { color: #256f8a; margin-right: 6px; }
+        .section-label { font-weight: 600; color: #1f3d4f; margin-bottom: 0.6rem; }
+        .logout-btn { background: none; border: none; color: #a11f1f; cursor: pointer; font-weight: 500; padding: 0.2rem 0.6rem; border-radius: 20px; }
+        .logout-btn:hover { background: #fee2e2; }
+        .nav-right { display: flex; align-items: center; gap: 0.5rem; }
+    </style>
+</head>
+<body>
+    <div class="page-card">
+        <div class="page-title"><i class="fas fa-home"></i> Resident Dashboard</div>
+        <div class="nav-bar">
+            <span class="nav-brand" onclick="window.location.href='resident-dashboard.html'"><i class="fas fa-shield-halved"></i>Barangay</span>
+            <div class="nav-links">
+                <span onclick="window.location.href='resident-dashboard.html'"><i class="fas fa-home"></i>Home</span>
+                <span onclick="window.location.href='emergency-request.html'"><i class="fas fa-phone"></i>Emergency</span>
+                <span onclick="alert('Emergency Contacts page')"><i class="fas fa-address-book"></i>Contacts</span>
+                <span onclick="alert('Profile Settings page')"><i class="fas fa-user"></i>Profile</span>
+            </div>
+            <div class="nav-right">
+                <button class="logout-btn" onclick="window.location.href='index.html'"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+        </div>
+        <div class="section-label">ANNOUNCEMENTS</div>
+        <div class="announcement-block"><i class="fas fa-bullhorn" style="color:#256f8a; margin-right: 10px;"></i>Health Advisory: Dengue Prevention Campaign</div>
+        <div class="announcement-block"><i class="fas fa-phone-volume" style="color:#256f8a; margin-right: 10px;"></i>Emergency Hotline Updates</div>
+        <div class="section-label" style="margin-top: 1.2rem;">QUICK ACTIONS</div>
+        <div class="quick-action-group">
+            <span class="quick-btn" onclick="window.location.href='emergency-request.html'"><i class="fas fa-bolt"></i>Submit Emergency Request</span>
+            <span class="quick-btn" onclick="alert('Incident Reporting form')"><i class="fas fa-file-signature"></i>Report Incident</span>
+        </div>
+    </div>
+</body>
+</html>

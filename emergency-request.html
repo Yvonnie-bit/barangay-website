@@ -1,0 +1,85 @@
+<!-- ============================================================ -->
+<!-- PAGE 5: EMERGENCY REQUEST FORM (emergency-request.html) -->
+<!-- ============================================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Assistance Request</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
+        body { background: #f0f4f9; padding: 1.5rem; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .page-card { background: #ffffff; border-radius: 28px; box-shadow: 0 6px 20px rgba(0,0,0,0.04); padding: 1.8rem 2rem 2.2rem; border: 1px solid #e6edf4; max-width: 580px; width: 100%; }
+        .page-title { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; color: #4b6a7c; margin-bottom: 1.4rem; border-bottom: 2px solid #e1e8f0; padding-bottom: 0.5rem; display: flex; align-items: center; gap: 10px; }
+        .page-title i { color: #256f8a; font-size: 1.1rem; }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label { display: block; font-weight: 500; font-size: 0.85rem; color: #1f3d4f; margin-bottom: 0.2rem; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.6rem 1rem; border: 1.5px solid #d3dde8; border-radius: 30px; font-size: 0.9rem; background: #fafdff; transition: border-color 0.2s; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #256f8a; outline: none; }
+        .form-group textarea { min-height: 70px; border-radius: 24px; resize: vertical; }
+        .btn-submit { background: #1a4f69; color: white; border: none; padding: 0.6rem 2.2rem; border-radius: 40px; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: background 0.2s; }
+        .btn-submit:hover { background: #0f3b4e; }
+        .back-link { display: inline-block; margin-bottom: 1rem; color: #256f8a; cursor: pointer; font-weight: 500; }
+        .back-link:hover { text-decoration: underline; }
+        .nav-right { display: flex; align-items: center; gap: 0.5rem; justify-content: space-between; flex-wrap: wrap; }
+        .logout-btn { background: none; border: none; color: #a11f1f; cursor: pointer; font-weight: 500; padding: 0.2rem 0.6rem; border-radius: 20px; }
+        .logout-btn:hover { background: #fee2e2; }
+        .success-msg { display: none; background: #d1fae5; color: #0a5e3f; padding: 0.8rem; border-radius: 16px; margin-top: 1rem; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="page-card">
+        <div class="page-title"><i class="fas fa-hand-holding-heart"></i> Emergency Assistance Request</div>
+        
+        <div class="nav-right">
+            <span class="back-link" onclick="window.location.href='resident-dashboard.html'"><i class="fas fa-arrow-left"></i> Back to Dashboard</span>
+            <button class="logout-btn" onclick="window.location.href='index.html'"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+        
+        <form id="emergencyForm" onsubmit="submitRequest(event)">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Juan Dela Cruz" value="Maria Santos" required>
+            </div>
+            <div class="form-group">
+                <label>Contact Number</label>
+                <input type="text" placeholder="09123456789" value="09123456789" required>
+            </div>
+            <div class="form-group">
+                <label>Type of Emergency</label>
+                <select required>
+                    <option value="">Select type...</option>
+                    <option>Medical</option>
+                    <option selected>Fire</option>
+                    <option>Accident</option>
+                    <option>Disaster</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea placeholder="Describe the emergency..." required>Need immediate assistance for a medical emergency at home.</textarea>
+            </div>
+            <button type="submit" class="btn-submit"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i>Submit Request</button>
+        </form>
+        
+        <div id="successMsg" class="success-msg">
+            <i class="fas fa-check-circle" style="margin-right: 8px;"></i> Request submitted successfully!
+        </div>
+    </div>
+
+    <script>
+        function submitRequest(event) {
+            event.preventDefault();
+            const msg = document.getElementById('successMsg');
+            msg.style.display = 'block';
+            setTimeout(() => {
+                msg.style.display = 'none';
+            }, 4000);
+            // In a real app, you'd send data to server here
+        }
+    </script>
+</body>
+</html>
